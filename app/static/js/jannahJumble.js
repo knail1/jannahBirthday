@@ -2,7 +2,7 @@
 //  select  as d3_select,
 //  shuffle as d3_shuffle
 //} from 'd3';
-let data = 'Congratulations Jannah, you worked hard and finished the Quran. So proud of you!'.split('').map( (d, i) => ({
+let data = 'You worked hard and finished the Quran. So proud of you!'.split('').map( (d, i) => ({
 //let data = 'Does this make any sense?'.split('').map( (d, i) => ({
   letter  : d,
   index   : i,
@@ -24,7 +24,8 @@ function update (data) {
   text.enter().append('text')
     .attr('fill', d => d.letter === '?' ? 'tomato' : '#000')
     .attr('x', (d, i) => LETTER_WIDTH*d.pos)
-    .style('font-size', '30px')
+    .style('font-size', '20px')
+      .style('color', 'green')
     .style('font-family', 'monospace')
     .text(d => d.letter)
     .merge(text)
