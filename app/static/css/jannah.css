@@ -1,0 +1,290 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+section {
+  display: block;
+}
+
+svg {
+  overflow: visible;
+}
+
+section {
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+#viz-word-snake {
+  font-size: 14px;
+  white-space: pre;
+  cursor: default;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.circle-path {
+  fill: none;
+  pointer-events: none;
+}
+
+.node .circle-background {
+  fill: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.circle-center-translation {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.circle-center-original {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.7em;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.circle-center-language {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  font-style: italic;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.circle-path-legend {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  pointer-events: none;
+}
+
+.circle-path-text {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.1em;
+  pointer-events: none;
+}
+
+
+body,
+html {
+  margin: 0;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sakura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  .container {
+
+    #info {
+      display: none;
+      width: 90vw;
+      text-align: center;
+      font-family: "Karla", sans-serif;
+      font-size: 1.5em;
+      #location {
+        margin-bottom: 10px;
+      }
+      #time {
+
+      }
+    }
+    #loader {
+      animation: heartBeat 1.2s infinite;
+      svg {
+        stroke: darken(#fe85c0, 10%);
+        fill: darken(#fe85c0, 10%);
+      }
+    }
+
+    @keyframes heartBeat {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      40% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.parent {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.petal {
+  margin: 1px;
+  animation: fall1 10s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fe85c0;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 3px 3px 5px -3px #fff;
+  border-radius: 15px 5px 15px 0px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.petal::after {
+  content: "";
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #db0637;
+  border-radius: 15px 5px 15px 0px;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.petal:nth-child(2) {
+  animation-name: fall2;
+  animation-delay: 1.25s;
+  top: 10%;
+}
+.petal:nth-child(3) {
+  animation-name: fall3;
+  animation-delay: 3.65s;
+  top: 25%;
+}
+.petal:nth-child(4) {
+  animation-name: fall4;
+  animation-delay: 8.15s;
+  top: 30%;
+}
+.petal:nth-child(5) {
+  animation-name: fall5;
+  animation-delay: 5.35s;
+  top: 50%;
+}
+.petal:nth-child(6) {
+  animation-name: fall6;
+  animation-delay: 1.25s;
+  top: 75%;
+}
+
+.petal:nth-child(7) {
+  animation-name: fall2;
+  animation-delay: 9.25s;
+  top: 10%;
+}
+.petal:nth-child(8) {
+  animation-name: fall3;
+  animation-delay: 2.65s;
+  top: 25%;
+}
+.petal:nth-child(9) {
+  animation-name: fall4;
+  animation-delay: 0.15s;
+  top: 30%;
+}
+.petal:nth-child(10) {
+  animation-name: fall5;
+  animation-delay: 1.25s;
+  top: 50%;
+}
+.petal:nth-child(11) {
+  animation-name: fall6;
+  animation-delay: 0.25s;
+  top: 75%;
+}
+
+.petal:nth-child(12) {
+  animation-name: fall6;
+  animation-delay: 1.75s;
+  top: 85%;
+}
+
+@keyframes fall1 {
+  to {
+    transform: translateY(200px) translateX(2560px) translateZ(200px)
+      rotate3d(1, 0.25, 0, 320deg);
+  }
+}
+
+@keyframes fall2 {
+  to {
+    transform: translateY(150px) translateX(2560px) translateZ(500px)
+      rotate3d(1, 0.25, 0.25, 220deg);
+  }
+}
+
+@keyframes fall3 {
+  to {
+    transform: translateY(150px) translateX(2560px) translateZ(300px)
+      rotate3d(0.25, 1, 1, 420deg);
+  }
+}
+
+@keyframes fall4 {
+  to {
+    transform: translateY(-160px) translateX(2560px) translateZ(-500px)
+      rotate3d(1, 1, 0.25, 720deg);
+  }
+}
+
+@keyframes fall5 {
+  to {
+    transform: translateY(-200px) translateX(2560px) translateZ(400px)
+      rotate3d(0.25, 1, 0.25, 820deg);
+  }
+}
+
+@keyframes fall6 {
+  to {
+    transform: translateY(-300px) translateX(2560px) translateZ(-100px)
+      rotate3d(1, 1, 1, 720deg);
+  }
+}

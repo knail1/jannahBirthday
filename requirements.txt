@@ -1,0 +1,11 @@
+Flask
+Flask-Babel
+Flask-Bootstrap
+Flask-Moment
+Flask-Script
+Flask-Table
+Flask-WTF
+Flask-Test
+Flask-Testing
+gunicorn
+Jinja2
